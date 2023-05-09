@@ -1,0 +1,477 @@
+{
+  "seller": [
+    {
+      "id": 2,
+      "firstName": "Anna",
+      "surname": "Smith"
+    },
+    {
+      "id": 3,
+      "firstName": "Peter",
+      "surname": "Jones"
+    },
+    {
+      "id": 4,
+      "firstName": "Karen",
+      "surname": "Slater"
+    },
+    {
+      "id": 5,
+      "firstName": "Jade",
+      "surname": "Huang",
+      "address": "China",
+      "postcode": "",
+      "phone": ""
+    },
+    {
+      "firstName": "Andy",
+      "surname": "Smith",
+      "address": "",
+      "postcode": "",
+      "phone": "",
+      "id": 7
+    },
+    {
+      "firstName": "Stephanie ",
+      "surname": "Hill",
+      "address": "brecon Town, Brecon",
+      "postcode": "BR1 2JE",
+      "phone": "",
+      "id": 8
+    },
+    {
+      "firstName": "Jade",
+      "surname": "Song",
+      "address": "Sichuan, China",
+      "postcode": "1131321",
+      "phone": "",
+      "id": 9
+    },
+    {
+      "firstName": "Nicohola",
+      "surname": "Green",
+      "address": "Fairwater, Cardiff",
+      "postcode": "CF1 1AA",
+      "phone": "1234234",
+      "id": 10
+    },
+    {
+      "address": "London",
+      "postcode": "W1 6GH",
+      "type": "DETACHED",
+      "price": "4523462",
+      "bedroom": "3",
+      "bathroom": "3",
+      "garden": "true",
+      "id": 30
+    },
+    {
+      "address": "sadf",
+      "postcode": "sdf",
+      "type": "DETACHED",
+      "price": "sdaf",
+      "bedroom": "2",
+      "bathroom": "2",
+      "garden": "true",
+      "id": 31
+    }
+  ],
+  "property": [
+    {
+      "address": "2 Welsh Street, Ebbw Vale",
+      "postcode": "TR1 1GA",
+      "type": "DETACHED",
+      "price": 125000,
+      "bedroom": 1,
+      "bathroom": 1,
+      "garden": 1,
+      "sellerId": 3,
+      "status": "Withdraw",
+      "id": 3
+    },
+    {
+      "address": "8 Hilltop, Ebbw Vale",
+      "postcode": "EB1 2VA",
+      "type": "DETACHED",
+      "price": 99000,
+      "bedroom": 3,
+      "bathroom": 3,
+      "garden": 1,
+      "sellerId": 4,
+      "status": "SOLD",
+      "id": 4
+    },
+    {
+      "address": "London",
+      "postcode": "W1 6YG",
+      "type": "DETACHED",
+      "price": "5356262",
+      "bedroom": "3",
+      "bathroom": "3",
+      "garden": "true",
+      "sellerId": false,
+      "id": 5
+    },
+    {
+      "address": "23something, Leeds",
+      "postcode": "L4 5jh",
+      "type": "DETACHED",
+      "price": "25645645",
+      "bedroom": "3",
+      "bathroom": "4",
+      "garden": "true",
+      "sellerId": false,
+      "id": 6
+    },
+    {
+      "address": "fhfgh",
+      "postcode": "34534gd",
+      "type": "DETACHED",
+      "price": "2457645",
+      "bedroom": "1",
+      "bathroom": "3",
+      "garden": "true",
+      "sellerId": false,
+      "id": 7
+    },
+    {
+      "address": "sdf",
+      "postcode": "safd",
+      "type": "DETACHED",
+      "price": "dfs",
+      "bedroom": "2",
+      "bathroom": "1",
+      "garden": "true",
+      "sellerId": false,
+      "id": 8
+    },
+    {
+      "address": "afsd",
+      "postcode": "asdf",
+      "type": "DETACHED",
+      "price": "sadf",
+      "bedroom": "2",
+      "bathroom": "3",
+      "garden": "true",
+      "sellerId": 1,
+      "id": 9
+    },
+    {
+      "address": "gfsadf111",
+      "postcode": "asdfas111",
+      "type": "DETACHED",
+      "price": "23123",
+      "bedroom": "4",
+      "bathroom": "5",
+      "garden": "true",
+      "sellerId": 1,
+      "id": 10
+    },
+    {
+      "address": "fawwerwr222",
+      "postcode": "affawe222",
+      "type": "DETACHED",
+      "price": "34124421",
+      "bedroom": "2",
+      "bathroom": "3",
+      "garden": "true",
+      "id": 11
+    },
+    {
+      "address": "sdfasdf",
+      "postcode": "asdf",
+      "type": "DETACHED",
+      "price": "sgedg",
+      "bedroom": "3",
+      "bathroom": "select",
+      "garden": "false",
+      "id": 12
+    },
+    {
+      "address": "dassd",
+      "postcode": "asdas",
+      "type": "DETACHED",
+      "price": "zdz",
+      "bedroom": "2",
+      "bathroom": "2",
+      "garden": "false",
+      "id": 13
+    },
+    {
+      "address": "asdf",
+      "postcode": "asdf",
+      "type": "DETACHED",
+      "price": "szfvz",
+      "bedroom": "2",
+      "bathroom": "select",
+      "garden": "true",
+      "sellerId": "1",
+      "id": 14
+    },
+    {
+      "address": "asfd",
+      "postcode": "asdf",
+      "type": "DETACHED",
+      "price": "asfda",
+      "bedroom": "1",
+      "bathroom": "1",
+      "garden": "true",
+      "sellerId": "1",
+      "id": 15
+    },
+    {
+      "address": "asdf",
+      "postcode": "sadf",
+      "type": "SEMI",
+      "price": "safds",
+      "bedroom": "2",
+      "bathroom": "1",
+      "garden": "true",
+      "sellerId": "2",
+      "id": 16,
+      "status": "Withdraw"
+    },
+    {
+      "address": "asd",
+      "postcode": "asd",
+      "type": "DETACHED",
+      "price": "asd",
+      "bedroom": "2",
+      "bathroom": "2",
+      "garden": "true",
+      "sellerId": 3,
+      "id": 17,
+      "status": "Withdraw"
+    },
+    {
+      "address": "sdf",
+      "postcode": "sdf",
+      "type": "DETACHED",
+      "price": "3452334",
+      "bedroom": "3",
+      "bathroom": "1",
+      "garden": "true",
+      "sellerId": 2,
+      "id": 18
+    },
+    {
+      "address": "sdargsda",
+      "postcode": "safs",
+      "type": "DETACHED",
+      "price": "1231243453",
+      "bedroom": "3",
+      "bathroom": "3",
+      "garden": "true",
+      "sellerId": 2,
+      "status": "Withdraw",
+      "id": 19
+    },
+    {
+      "address": "weqrer",
+      "postcode": "qwerq",
+      "type": "SEMI",
+      "price": "324134",
+      "bedroom": "1",
+      "bathroom": "1",
+      "garden": "true",
+      "sellerId": 2,
+      "status": "Withdraw",
+      "id": 20
+    },
+    {
+      "address": "ewr",
+      "postcode": "wert",
+      "type": "DETACHED",
+      "price": "32144",
+      "bedroom": "2",
+      "bathroom": "3",
+      "garden": "true",
+      "sellerId": 2,
+      "status": "Withdraw",
+      "id": 21
+    },
+    {
+      "address": "wete",
+      "postcode": "wert",
+      "type": "DETACHED",
+      "price": "3425345",
+      "bedroom": "2",
+      "bathroom": "2",
+      "garden": "true",
+      "sellerId": 2,
+      "status": "FOR SALE",
+      "id": 22
+    },
+    {
+      "address": "asdf",
+      "postcode": "sadf",
+      "type": "SEMI",
+      "price": "342",
+      "bedroom": "3",
+      "bathroom": "1",
+      "garden": "false",
+      "sellerId": 9,
+      "status": "Withdraw",
+      "id": 23
+    },
+    {
+      "address": "asdf",
+      "postcode": "asdf",
+      "type": "SEMI",
+      "price": "45234",
+      "bedroom": "2",
+      "bathroom": "3",
+      "garden": "false",
+      "sellerId": 9,
+      "status": "FOR SALE",
+      "id": 24
+    },
+    {
+      "address": "afsd",
+      "postcode": "asdf",
+      "type": "SEMI",
+      "price": "3412",
+      "bedroom": "3",
+      "bathroom": "2",
+      "garden": "select",
+      "sellerId": 9,
+      "status": "FOR SALE",
+      "id": 25
+    },
+    {
+      "address": "2134",
+      "postcode": "wqer",
+      "type": "DETACHED",
+      "price": "12341",
+      "bedroom": "3",
+      "bathroom": "3",
+      "garden": "select",
+      "sellerId": 9,
+      "status": "FOR SALE",
+      "id": 26
+    },
+    {
+      "address": "erqwer",
+      "postcode": "wqer",
+      "type": "DETACHED",
+      "price": "1342",
+      "bedroom": "3",
+      "bathroom": "2",
+      "garden": "select",
+      "sellerId": 9,
+      "status": "FOR SALE",
+      "id": 27
+    },
+    {
+      "address": "sdfa",
+      "postcode": "asdf",
+      "type": "SEMI",
+      "price": "3451234",
+      "bedroom": "3",
+      "bathroom": "3",
+      "garden": "true",
+      "sellerId": 3,
+      "status": "Withdraw",
+      "id": 28
+    },
+    {
+      "address": "2345",
+      "postcode": "werq",
+      "type": "DETACHED",
+      "price": "342134",
+      "bedroom": "2",
+      "bathroom": "2",
+      "garden": "true",
+      "sellerId": 3,
+      "status": "Withdraw",
+      "id": 29
+    },
+    {
+      "address": "ewrtw",
+      "postcode": "wert",
+      "type": "SEMI",
+      "price": "25345",
+      "bedroom": "2",
+      "bathroom": "3",
+      "garden": "false",
+      "sellerId": 3,
+      "status": "Withdraw",
+      "id": 30
+    },
+    {
+      "address": "sadfs",
+      "postcode": "asdf",
+      "type": "SEMI",
+      "price": "2345234",
+      "bedroom": "2",
+      "bathroom": "2",
+      "garden": "true",
+      "sellerId": 5,
+      "status": "FOR SALE",
+      "id": 31
+    },
+    {
+      "address": "rwqer",
+      "postcode": "wqer",
+      "type": "DETACHED",
+      "price": "234134",
+      "bedroom": "3",
+      "bathroom": "3",
+      "garden": "false",
+      "sellerId": 5,
+      "status": "FOR SALE",
+      "id": 32
+    },
+    {
+      "address": "342",
+      "postcode": "42",
+      "type": "SEMI",
+      "price": "32234",
+      "bedroom": "3",
+      "bathroom": "4",
+      "garden": "true",
+      "sellerId": 5,
+      "status": "FOR SALE",
+      "id": 33
+    }
+  ],
+  "buyer": [
+    {
+      "id": 1,
+      "firstName": "Cookie",
+      "surname": "Cat",
+      "address": "42 Pen-y-lan Road, Cardiff",
+      "postcode": "CA1 8RR",
+      "phone": ""
+    },
+    {
+      "id": 2,
+      "firstName": "Nilla",
+      "surname": "Cat",
+      "address": "100 Magor Road, Newport",
+      "postcode": "NP1 2LL",
+      "phone": ""
+    },
+    {
+      "firstName": "Monty",
+      "surname": "Dog",
+      "address": "Very Rich Street, London",
+      "postcode": "W1",
+      "phone": "",
+      "id": 3
+    }
+  ],
+  "booking": [
+    {
+      "buyerId": 1,
+      "propertyId": 2,
+      "time": "2023-02-28T08:00:00.038Z",
+      "id": 2
+    },
+    {
+      "propertyId": 1,
+      "time": "2023-03-02T08:00:00.000Z",
+      "id": 3
+    }
+  ]
+}
