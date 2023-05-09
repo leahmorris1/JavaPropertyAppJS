@@ -27,23 +27,14 @@ export const AddBuyerForm = () => {
         }
 
         if (!newSeller.firstName) { setErrorMessage_firstName('Please fill in First Name.'); }
-
         else { setErrorMessage_firstName('') }
-
         if (!newSeller.surname) { setErrorMessage_surname('Please fill in Surname.'); }
-
         else { setErrorMessage_surname('') }
-
         if (!newSeller.address) { setErrorMessage_address('Please fill in Address.'); }
-
         else { setErrorMessage_address('') }
-
         if (!newSeller.postcode) { setErrorMessage_postcode('Please fill in Postcode.'); }
-
         else { setErrorMessage_postcode('') }
-
         if (!newSeller.phone) { setErrorMessage_phone('Please fill in Phone Number.'); }
-
         else { setErrorMessage_phone('') }
 
         if (
@@ -70,41 +61,41 @@ export const AddBuyerForm = () => {
     }
     return (
         <>
-            <header> Add Buyer Form </header><br />
+            <h1> Add Buyer Form </h1><br />
 
             <form class="sellerForm container">
-                <label class="col-sm-2 col-form-label text-success"> First Name: </label>
+                <label class="col-sm-3 col-form-label"> First Name: </label>
                 <input ref={firstNameRef} type='text' placeholder='First Name' />
                 <small id="passwordHelp" class="text-danger">
                     {errorMessage_firstName && <div className="form-group has-warning">{errorMessage_firstName}</div>}
                 </small><br />
 
-                <label class="col-sm-2 col-form-label text-success"> Surname: </label>
+                <label class="col-sm-3 col-form-label"> Surname: </label>
                 <input ref={surnameRef} type='text' placeholder='Surname' />
                 <small id="passwordHelp" class="text-danger">
                     {errorMessage_surname && <div className="form-group has-warning">{errorMessage_surname}</div>}
                 </small><br />
 
-                <label class="col-sm-2 col-form-label text-success"> Address: </label>
+                <label class="col-sm-3 col-form-label"> Address: </label>
                 <input ref={addressRef} type='text' placeholder='City/Country' />
                 <small id="passwordHelp" class="text-danger">
                     {errorMessage_address && <div className="form-group has-warning">{errorMessage_address}</div>}
                 </small><br />
 
-                <label class="col-sm-2 col-form-label text-success"> Postcode: </label>
+                <label class="col-sm-3 col-form-label"> Postcode: </label>
                 <input ref={postcodeRef} type='text' placeholder='Postcode' />
                 <small id="passwordHelp" class="text-danger">
                     {errorMessage_postcode && <div className="form-group has-warning">{errorMessage_postcode}</div>}
                 </small><br />
 
-                <label class="col-sm-2 col-form-label text-success"> Phone: </label>
-                <input ref={phoneRef} type='text' placeholder='Phone' />
+                <label class="col-sm-3 col-form-label"> Phone Number: </label>
+                <input ref={phoneRef} type='text' placeholder='Phone Number' />
                 <small id="passwordHelp" class="text-danger">
                     {errorMessage_phone && <div className="form-group has-warning">{errorMessage_phone}</div>}
                 </small><br />
 
-                <Link className="btn btn-dark" onClick={() => validateAndSave()}> Save </Link>
-                <Link to="/Buyer/BuyerProperty" className="btn btn-light"> Cancel </Link>
+                <Link className="btn btn-dark link1" onClick={() => validateAndSave()}> Save </Link>
+                <Link to="/Buyer/BuyerProperty" className="btn btn-light link1"> Cancel </Link>
 
             </form >
         </>

@@ -2,6 +2,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+
+import '../../style.css';
+
 function Seller() {
     const navigate = useNavigate()
 
@@ -36,23 +39,23 @@ function Seller() {
 
     return (
         <>
-            <header> Seller Data Page </header><br />
+            <h1> Seller Data Page </h1>
+            <div className='container'>
+                <Link className="btn btn-light" to="/Seller/AddSellerForm"> Add Seller</Link>
+                <Link className="addsellerbtn" type="button" value="Add Seller" />
+            </div>
             <br />
-            <Link className="btn btn-light" to="/Seller/AddSellerForm"> Add Seller</Link>
-            <Link className="addsellerbtn" type="button" value="Add Seller" />
-            <br />
-
-            <table>
+            <table className='container'>
                 <tr>
                     <th> First Name </th>
                     <th> Surname </th>
                     <th> Address </th>
                     <th> Poscode </th>
                     <th> PhoneNo </th>
-                    <td>  </td>
-                    <td>  </td>
+                    <th>  </th>
+                    <th>  </th>
                 </tr>
-                {records.map(rec => <tr>
+                {records.map(rec => <tr class="tr1">
                     <td> {rec.firstName}  </td>
                     <td> {rec.surname}  </td>
                     <td> {rec.address}  </td>

@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
+import '../../style.css';
+
 function ManagePropertyData(Person) {
 
     const navigate = useNavigate()
@@ -59,13 +61,15 @@ function ManagePropertyData(Person) {
 
     return (
         <>
-            <header> Manage Seller Property <b>{firstName} {surname}</b> </header><br />
+            <h1> Manage Seller Property <b>{firstName} {surname}</b> </h1><br />
 
             <br />
-            <button className="btn btn-light addpropertybtn" onClick={() => sellerPropertyForm()}> Add Poperty</button>
-            <br /><br />
+            <div className='container'>
+                <button className="btn btn-light addpropertybtn" onClick={() => sellerPropertyForm()}> Add Poperty</button>
+            </div>
+            <br />
 
-            <table class="table">
+            <table className='container'>
                 <tr>
                     <th> SellerId </th>
                     <th> Address </th>
@@ -77,33 +81,29 @@ function ManagePropertyData(Person) {
                     <th> Garden </th>
                     <th> Status </th>
                     <th> PropertyID </th>
-                    <td>  </td>
+                    <th>  </th>
+                    <th>  </th>
                 </tr>
 
 
-                {filteredRecord.map(data =>
-                    <tr>
-                        <td> {data.sellerId} </td>
-                        <td> {data.address} </td>
-                        <td> {data.postcode} </td>
-                        <td> {data.type} </td>
-                        <td> {data.price} </td>
-                        <td> {data.bedroom} </td>
-                        <td> {data.bathroom} </td>
-                        <td> {data.garden} </td>
-                        <td> {data.status} </td>
-                        <td> {data.id} </td>
-                        {// eslint-disable-next-line eqeqeq
-                            data.status != 'SOLD' ?
-                                // eslint-disable-next-line eqeqeq
-                                (data.status == "FOR SALE" ?
-                                    (<td><input className="btn_withdraw" type="button" value="Withdraw" onClick={() => withdrawRecord(data.id, "Withdraw")} /></td>)
-                                    :
-                                    (<td><input className="btn_withdraw" type="button" value="Resubmit" onClick={() => withdrawRecord(data.id, "FOR SALE")} /></td>)
-                                )
-                                : (<td></td>)}
-                        < td > <input className="btn_delete" type="button" value="Remove" onClick={() => removeRecord(data.id)} /></td>
-                    </tr>
+                {filteredRecord.map(data => <tr class="tr1">
+                    <td> {data.sellerId} </td>
+                    <td> {data.address} </td>
+                    <td> {data.postcode} </td>
+                    <td> {data.type} </td>
+                    <td> {data.price} </td>
+                    <td> {data.bedroom} </td>
+                    <td> {data.bathroom} </td>
+                    {data.garden == "true" ? (<td>Yes</td>) : (<td>No</td>)}
+                    <td> {data.status} </td>
+                    <td> {data.id} </td>
+                    {data.status != 'SOLD' ?
+                        (data.status == "FOR SALE" ?
+                            (<td><button className="btn btn-light" onClick={() => withdrawRecord(data.id, "Withdraw")}>Withdraw</button></td>)
+                            : (<td><button className="btn btn-light" onClick={() => withdrawRecord(data.id, "FOR SALE")}>Resubmit</button></td>))
+                        : (<td></td>)}
+                    < td > <input className="btn_delete" type="button" value="Remove" onClick={() => removeRecord(data.id)} /></td>
+                </tr>
 
                 )}
             </table >

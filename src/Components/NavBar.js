@@ -11,16 +11,17 @@ import SellerPropertyInputform from "./Seller/AddSellerPropertyForm";
 
 import Buyer from "./Buyer/BuyerProperty";
 import BuyerInputForm from "./Buyer/AddBuyerForm";
+import ManageBuyerBookings from "./Buyer/ManageBuyerBookings";
 
 import PropertySearch from "./Property/PropertySearch";
-import Purchase from "./Property/Purchase";
+import Booking from "./Property/Booking";
 
 
 function NavBar() {
 
     return (
         <BrowserRouter>
-            <nav class="navbar navbar-inverse navbar-expand-sm navbar-dark bg-dark" id="topNavBar">
+            <nav class="navbar navbar-inverse navbar-expand-sm navbar-light bg-light" id="topNavBar">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                         <span class="navbar-toggler-icon"></span>
@@ -56,9 +57,10 @@ function NavBar() {
 
                 <Route path="/Buyer/BuyerProperty" element={<Buyer />} />
                 <Route path="/Buyer/AddBuyerForm" element={<BuyerInputForm />} />
+                <Route path="/Buyer/ManageBuyerBookings/:buyerId/:firstName/:surname" element={<ManageBuyerBookings />} />
 
                 <Route path="/Property/PropertySearch" element={<PropertySearch />} />
-                <Route path="/Property/Purchase" element={<Purchase />} />
+                <Route path="/Property/Booking" element={<Booking />} />
 
 
             </Routes>

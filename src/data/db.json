@@ -54,26 +54,6 @@
       "postcode": "CF1 1AA",
       "phone": "1234234",
       "id": 10
-    },
-    {
-      "address": "London",
-      "postcode": "W1 6GH",
-      "type": "DETACHED",
-      "price": "4523462",
-      "bedroom": "3",
-      "bathroom": "3",
-      "garden": "true",
-      "id": 30
-    },
-    {
-      "address": "sadf",
-      "postcode": "sdf",
-      "type": "DETACHED",
-      "price": "sdaf",
-      "bedroom": "2",
-      "bathroom": "2",
-      "garden": "true",
-      "id": 31
     }
   ],
   "property": [
@@ -229,7 +209,7 @@
       "garden": "true",
       "sellerId": "2",
       "id": 16,
-      "status": "Withdraw"
+      "status": "FOR SALE"
     },
     {
       "address": "asd",
@@ -252,7 +232,8 @@
       "bathroom": "1",
       "garden": "true",
       "sellerId": 2,
-      "id": 18
+      "id": 18,
+      "status": "FOR SALE"
     },
     {
       "address": "sdargsda",
@@ -263,7 +244,7 @@
       "bathroom": "3",
       "garden": "true",
       "sellerId": 2,
-      "status": "Withdraw",
+      "status": "FOR SALE",
       "id": 19
     },
     {
@@ -275,7 +256,7 @@
       "bathroom": "1",
       "garden": "true",
       "sellerId": 2,
-      "status": "Withdraw",
+      "status": "FOR SALE",
       "id": 20
     },
     {

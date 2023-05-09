@@ -1,6 +1,8 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import React, { useRef, useState } from 'react';
 
+import '../../style.css';
+
 //sellerID = "" -- get rid of the ""
 
 export const SellerpropertyInputForm = () => {
@@ -39,23 +41,17 @@ export const SellerpropertyInputForm = () => {
 
         if (!newSeller.address) { setErrorMessage_address('Please fill in address.'); }
         else { setErrorMessage_address('') }
-
         if (!newSeller.postcode) { setErrorMessage_postcode('Please fill in postcode.'); }
         else { setErrorMessage_postcode('') }
-
         if (newSeller.type === "select") { setErrorMessage_type('Please select type.'); }
         else { setErrorMessage_type('') }
-
         if (!newSeller.price) { setErrorMessage_price('Please fill in price.'); }
         else { setErrorMessage_price('') }
         /* validate as numeric and nor string */
-
         if (newSeller.bedroom === "select") { setErrorMessage_bedroom('Please select number of bedrooms.'); }
         else { setErrorMessage_bedroom('') }
-
         if (newSeller.bathroom === "select") { setErrorMessage_bathroom('Please select number of bathrooms.'); }
         else { setErrorMessage_bathroom('') }
-
         if (newSeller.garden === "select") { setErrorMessage_garden('Please select wheather you have a garden.'); }
         else { setErrorMessage_garden('') }
 
@@ -84,10 +80,10 @@ export const SellerpropertyInputForm = () => {
 
     return (
         <>
-            <header> Add Seller Property Form </header><br />
+            <h1> Add Seller Property Form </h1><br />
 
-            <form class='form'>
-                <label class="col-sm-2 col-form-label text-success"> Type: </label>
+            <form class='sellerForm container'>
+                <label class="col-sm-3 col-form-label"> Type: </label>
                 <select ref={typeRef} type='text' placeholder='Type'>
                     <option value="select">Select</option>
                     <option value="DETACHED"> Detached </option>
@@ -98,14 +94,13 @@ export const SellerpropertyInputForm = () => {
                     {errorMessage_type && <div className="form-group has-warning">{errorMessage_type}</div>}
                 </small><br />
 
-
-                <label class="col-sm-2 col-form-label text-success"> Price: </label>
+                <label class="col-sm-3 col-form-label"> Price: </label>
                 <input ref={priceRef} type='number' placeholder='Price' />
                 <small id="passwordHelp" class="text-danger">
                     {errorMessage_price && <div className="form-group has-warning">{errorMessage_price}</div>}
                 </small><br />
 
-                <label class="col-sm-2 col-form-label text-success"> Number of bedrooms: </label>
+                <label class="col-sm-3 col-form-label"> Number of bedrooms: </label>
                 <select ref={bedroomRef} type='text' placeholder='Bedroom'>
                     <option value="select">Select</option>
                     <option>1</option>
@@ -118,7 +113,7 @@ export const SellerpropertyInputForm = () => {
                     {errorMessage_bedroom && <div className="form-group has-warning">{errorMessage_bedroom}</div>}
                 </small><br />
 
-                <label class="col-sm-2 col-form-label text-success"> Number of bathrooms: </label>
+                <label class="col-sm-3 col-form-label"> Number of bathrooms: </label>
                 <select ref={bathroomRef} type='text' placeholder='Bathroom'>
                     <option value="select">Select</option>
                     <option>1</option>
@@ -131,7 +126,7 @@ export const SellerpropertyInputForm = () => {
                     {errorMessage_bathroom && <div className="form-group has-warning">{errorMessage_bathroom}</div>}
                 </small><br />
 
-                <label class="col-sm-2 col-form-label text-success"> Is there a garden: </label>
+                <label class="col-sm-3 col-form-label"> Is there a garden: </label>
                 <select ref={gardenRef} type='text' placeholder='garden'>
                     <option value="select">Select</option>
                     <option value="true">Yes</option>
@@ -141,22 +136,23 @@ export const SellerpropertyInputForm = () => {
                     {errorMessage_garden && <div className="form-group has-warning">{errorMessage_garden}</div>}
                 </small><br />
 
-                <label class="col-sm-2 col-form-label text-success"> Address: </label>
+                <label class="col-sm-3 col-form-label"> Address: </label>
                 <input ref={addressRef} type='text' placeholder='City/Country' />
                 <small id="passwordHelp" class="text-danger">
                     {errorMessage_address && <div className="form-group has-warning">{errorMessage_address}</div>}
                 </small><br />
 
-                <label class="col-sm-2 col-form-label text-success"> Postcode: </label>
+                <label class="col-sm-3 col-form-label"> Postcode: </label>
                 <input ref={postcodeRef} type='text' placeholder='Postcode' />
                 <small id="passwordHelp" class="text-danger">
                     {errorMessage_postcode && <div className="form-group has-warning">{errorMessage_postcode}</div>}
                 </small><br />
+                <br />
 
                 {/* Sold of for sale */}
 
-                <Link className="btn btn-dark" onClick={() => validateAndSave()}> Save </Link>
-                <Link to="/Seller/SellerProperty" className="btn btn-light"> Cancel </Link>
+                <Link className="btn btn-dark link1" onClick={() => validateAndSave()}> Save </Link>
+                <Link to="/Seller/SellerProperty" className="btn btn-light link1"> Cancel </Link>
 
             </form>
         </>
