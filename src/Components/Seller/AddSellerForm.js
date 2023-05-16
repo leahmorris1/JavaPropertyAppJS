@@ -45,7 +45,8 @@ export const SellerInputForm = () => {
             newSeller.postcode &&
             newSeller.phone
         ) {
-            fetch('http://localhost:8000/seller', {
+            console.log(newSeller);
+            fetch('http://localhost:8080/seller/add', {
                 method: "POST",
                 headers: { "content-Type": "application/json" },
                 body: JSON.stringify(newSeller)

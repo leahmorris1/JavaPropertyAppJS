@@ -9,7 +9,7 @@ function Buyer() {
     const [records, setRecords] = useState([])
 
     function getData() {
-        fetch('http://localhost:8000/buyer')
+        fetch('http://localhost:8080/buyer/read')
             .then((response) => response.json()
                 .then((data) => setRecords(data)))
     }
@@ -50,7 +50,7 @@ function Buyer() {
                     <th>  </th>
                 </tr>
                 {records.map(rec => <tr class="tr1">
-                    <td> {rec.firstname}  </td>
+                    <td> {rec.firstName}  </td>
                     <td> {rec.surname}  </td>
                     <td> {rec.address}  </td>
                     <td> {rec.postcode}  </td>

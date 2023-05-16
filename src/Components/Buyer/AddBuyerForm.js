@@ -18,7 +18,7 @@ export const AddBuyerForm = () => {
     const navigate = useNavigate()
 
     function validateAndSave() {
-        const newSeller = {
+        const newBuyer = {
             "firstName": firstNameRef.current.value,
             "surname": surnameRef.current.value,
             "address": addressRef.current.value,
@@ -26,28 +26,28 @@ export const AddBuyerForm = () => {
             "phone": phoneRef.current.value,
         }
 
-        if (!newSeller.firstName) { setErrorMessage_firstName('Please fill in First Name.'); }
+        if (!newBuyer.firstName) { setErrorMessage_firstName('Please fill in First Name.'); }
         else { setErrorMessage_firstName('') }
-        if (!newSeller.surname) { setErrorMessage_surname('Please fill in Surname.'); }
+        if (!newBuyer.surname) { setErrorMessage_surname('Please fill in Surname.'); }
         else { setErrorMessage_surname('') }
-        if (!newSeller.address) { setErrorMessage_address('Please fill in Address.'); }
+        if (!newBuyer.address) { setErrorMessage_address('Please fill in Address.'); }
         else { setErrorMessage_address('') }
-        if (!newSeller.postcode) { setErrorMessage_postcode('Please fill in Postcode.'); }
+        if (!newBuyer.postcode) { setErrorMessage_postcode('Please fill in Postcode.'); }
         else { setErrorMessage_postcode('') }
-        if (!newSeller.phone) { setErrorMessage_phone('Please fill in Phone Number.'); }
+        if (!newBuyer.phone) { setErrorMessage_phone('Please fill in Phone Number.'); }
         else { setErrorMessage_phone('') }
 
         if (
-            newSeller.firstName &&
-            newSeller.surname &&
-            newSeller.address &&
-            newSeller.postcode &&
-            newSeller.phone
+            newBuyer.firstName &&
+            newBuyer.surname &&
+            newBuyer.address &&
+            newBuyer.postcode &&
+            newBuyer.phone
         ) {
-            fetch('http://localhost:8000/seller', {
+            fetch('http://localhost:8080/buyer/add', {
                 method: "POST",
                 headers: { "content-Type": "application/json" },
-                body: JSON.stringify(newSeller)
+                body: JSON.stringify(newBuyer)
             })
                 .then((response) => {
                     navigate("/Buyer/BuyerProperty")

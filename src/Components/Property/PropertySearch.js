@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import React from 'react';
-import { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import '../../index.css';
 import '../../style.css';
@@ -8,59 +7,72 @@ import '../../style.css';
 function PropertySearch() {
 
     const [records, setRecords] = useState([]);
+    const [displayRecords, setDisplayRecords] = useState([]);
     const [buyerRecords, setBuyerRecords] = useState([]);
 
     const [type, settype] = useState('');
     const [minprice, setminprice] = useState('');
     const [maxprice, setmaxprice] = useState('');
-    const [bedroom, setbedroom] = useState('');
-    const [bathroom, setbathroom] = useState('');
+    const [bedrooms, setbedrooms] = useState('');
+    const [bathrooms, setbathrooms] = useState('');
     const [garden, setgarden] = useState('');
 
     const buyerName = useRef();
 
     function getData() {
-        fetch('http://localhost:8000/property')
+        fetch('http://localhost:8080/properties/read')
             .then((response) => response.json())
             .then((data) => {
-                setRecords(data.filter(data => data.status == 'FOR SALE'));
+                const filteredData = data.filter((record) => record.status === 'FOR SALE');
+                setRecords(filteredData);
+                setDisplayRecords(filteredData);
             });
-        fetch('http://localhost:8000/buyer')
-            .then((response) => response.json()
-                .then((buyerData) => setBuyerRecords(buyerData)))
+
+        fetch('http://localhost:8080/buyer/read')
+            .then((response) => response.json())
+            .then((buyerData) => setBuyerRecords(buyerData));
     }
 
-    useEffect(() => { getData() }, [])
+    useEffect(() => {
+        getData();
+    }, []);
 
     function handleSearch() {
-        fetch('http://localhost:8000/property')
-            .then((response) => response.json())
-            .then((data) => {
-                setRecords(data.filter(data => data.status == 'FOR SALE'));
-                const filterFORSALE = records.filter((data) =>
-                    (type === "" || data.type == type) &&
-                    (minprice === "" || data.price >= parseInt(minprice)) &&
-                    (maxprice === "" || data.price <= parseInt(maxprice)) &&
-                    (bedroom === "" || data.bedroom == bedroom) &&
-                    (bathroom === "" || data.bathroom == bathroom)
-                );
-                setRecords(filterFORSALE)
-            });
-
-        /* // eslint-disable-next-line eqeqeq
-        const filteredRecords = filterFORSALE.filter((rec) => rec.bedroom == bedroom);
-        // eslint-disable-next-line eqeqeq
-        const filteredRecords = filterFORSALE.filter((rec) => rec.bedroom == bathroom);
-        // eslint-disable-next-line eqeqeq
-        const filteredRecords = filterFORSALE.filter((rec) => rec.bedroom == garden); */
-
+        // fetch('http://localhost:8080/properties/read')
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         console.log(data)
+        //         console.log(minprice)
+        //         const filteredData = data.filter((record) =>
+        //             (record.status === 'FOR SALE') &&
+        //             (record.type === "" || record.type === type) &&
+        //             (record.price === "" || parseInt(record.price) >= parseInt(minprice)) &&
+        //             (record.price === "" || parseInt(record.price) <= parseInt(maxprice)) //&&
+        //             //(record.bedrooms === "" || record.bedrooms === bedrooms) &&
+        //             // (record.bathrooms === "" || record.bathrooms === bathrooms)
+        //         );
+        //         setRecords(filteredData);
+        //         console.log(data)
+        //     });
+        let data = records;
+        if (type !== "") data = data.filter(record => record.type === type);
+        if (bedrooms !== "") data = data.filter(record => record.bedrooms === parseInt(bedrooms));
+        if (bathrooms !== "") data = data.filter(record => record.bathrooms === parseInt(bathrooms));
+        if (minprice !== "") data = data.filter(record => record.price >= parseInt(minprice));
+        if (maxprice !== "") data = data.filter(record => record.price <= parseInt(maxprice));
+        if (garden !== "") data = data.filter(record => record.garden === (garden));
+        setDisplayRecords(data);
     }
+
+    useEffect(() => {
+        handleSearch();
+    }, [type, minprice, maxprice, bedrooms, bathrooms]);
 
     return (
         <main>
             <h1>Property Search</h1>
             <form class="container">
-                <label class="col-sm-3 col-form-label"> Select yourname and ID: </label>
+                <label class="col-sm-3 col-form-label"> Select your name and ID: </label>
                 <select ref={buyerName}>
                     {buyerRecords.map(buyerData =>
                         <option> {buyerData.firstName} {buyerData.surname} {buyerData.id} </option>
@@ -73,9 +85,9 @@ function PropertySearch() {
                 <label class="col-sm-3 col-form-label" type="text">Type:</label>
                 <select value={type} onChange={(e) => settype(e.target.value)}>
                     <option value="">Select</option>
-                    <option value="DETACHED"> Detached </option>
-                    <option value="SEMI"> SEMI </option>
-                    <option value="APARTMENT"> Apartment </option>
+                    <option value="Detached"> Detached </option>
+                    <option value="Semi"> Semi </option>
+                    <option value="Apartment"> Apartment </option>
                 </select>
                 <br />
                 <label class="col-sm-3 col-form-label">Price (£):</label>
@@ -109,7 +121,7 @@ function PropertySearch() {
                 </select>
                 <br />
                 <label class="col-sm-3 col-form-label">Bedroom:</label>
-                <select type="text" value={bedroom} onChange={(e) => setbedroom(e.target.value)}>
+                <select type="text" value={bedrooms} onChange={(e) => setbedrooms(e.target.value)}>
                     <option value="">Select</option>
                     <option>1</option>
                     <option>2</option>
@@ -119,7 +131,7 @@ function PropertySearch() {
                 </select>
                 <br />
                 <label class="col-sm-3 col-form-label">Bathroom:</label>
-                <select type="text" value={bathroom} onChange={(e) => setbathroom(e.target.value)} >
+                <select type="text" value={bathrooms} onChange={(e) => setbathrooms(e.target.value)} >
                     <option value="">Select</option>
                     <option>1</option>
                     <option>2</option>
@@ -154,14 +166,14 @@ function PropertySearch() {
                     <th>  </th>
                 </tr>
 
-                {records.map(rec => (
+                {displayRecords.map(rec => (
                     <tr key={rec.id}>
                         <td>{rec.address}</td>
                         <td>{rec.postcode}</td>
                         <td>{rec.type}</td>
                         <td>{rec.price}</td>
-                        <td>{rec.bedroom}</td>
-                        <td>{rec.bathroom}</td>
+                        <td>{rec.bedrooms}</td>
+                        <td>{rec.bathrooms}</td>
                         {rec.garden == "true" ? (<td>Yes</td>) : (<td>No</td>)}
                         <td>
                             {rec.status === "FOR SALE" && (<Link to="/Property/Booking" className="btn btn-light">Book Viewing

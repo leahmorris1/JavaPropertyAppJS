@@ -5,37 +5,37 @@ import { useParams, useNavigate } from 'react-router-dom';
 function ManageBuyerBooking() {
     const { buyerId, firstName, surname } = useParams()
     const [records, setRecords] = useState([])
-    const [propertyRecords, setPropertyRecords] = useState([])
+    const [propertyId, setPropertyId] = useState([])
 
 
     function getData() {
-        fetch('http://localhost:8000/booking')
+        fetch('http://localhost:8080/booking')
             .then((response) => response.json()
                 .then((data) => {
                     let filteredRecord1 = data.filter(rec => rec.buyerId == buyerId)
                     //alert("buyer" + buyerId)
                     setRecords(filteredRecord1)
                 }))
-        fetch('http://localhost:8000/booking')
+        fetch('http://localhost:8080/booking')
             .then((response) => response.json()
                 .then((data) => {
                     let filteredRecord1 = data.filter(rec => rec.buyerId == buyerId)
                     //alert("buyer" + buyerId)
                     setRecords(filteredRecord1)
-                }))l-
+                }))
     }
 
     useEffect(() => { getData() }, [])
 
     function removeRecord(recno) {
-        fetch(`http://localhost:8000/booking/${recno}`, { method: 'DELETE' })
+        fetch(`http://localhost:8080/booking/${recno}`, { method: 'DELETE' })
             .then((response) => {
                 if (response.ok) {
                     let temprecords = records.filter(recs => recs.id !== recno)
                     setRecords(temprecords);
                 }
                 else {
-                    console.error('Error dleting record:', response.status);
+                    console.error('Error deleting record:', response.status);
                 }
             })
             .catch(error => { console.error('Error deleting record', error) });

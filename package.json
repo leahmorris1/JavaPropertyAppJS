@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
     "calendarjs": "^0.2.1",
+    "cors": "^2.8.5",
     "dayjs": "^1.11.7",
     "moment": "^2.29.4",
     "momentjs": "^2.0.0",
